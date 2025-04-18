@@ -29,7 +29,7 @@ def main():
 
     person_age = st.number_input("Usia", min_value=18, max_value=100, value=30)
     person_gender = st.selectbox("Jenis Kelamin", ["male", "female"])
-    person_education = st.selectbox("Pendidikan", ["High School", "College", "Associate", "Graduate", "Post-Graduate", "Doctorate"])
+    person_education = st.selectbox("Pendidikan", ["Bachelor", "Associate", "High School", "Master", "Doctorate])
     person_income = st.number_input("Pendapatan", min_value=0.0, value=5000.0)
     person_emp_exp = st.number_input("Pengalaman Kerja (tahun)", min_value=0, value=3)
     person_home_ownership = st.selectbox("Status Kepemilikan Rumah", ["RENT", "OWN", "MORTGAGE", "OTHER"])
