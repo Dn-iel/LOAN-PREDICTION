@@ -19,8 +19,8 @@ def main():
     st.title("Loan Prediction App")
 
     # Load model dan encoder
-    model_filename = 'xgb_abal.pkl'  # Ganti nama file jika perlu
-    encoder_filename = 'onehot_abal.pkl'
+    model_filename = 'xgb_model.pkl' 
+    encoder_filename = 'onehot_encoder.pkl'
 
     model = load_joblib(model_filename)
     encoder = load_joblib(encoder_filename)
