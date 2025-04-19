@@ -38,7 +38,6 @@ def main():
     previous_loan = st.selectbox("Ada Pinjaman Sebelumnya?", ["Yes", "No"])
 
     if st.button("Prediksi"):
-        # Encode manual
         gender_enc = 1 if person_gender == "female" else 0
         prev_loan_enc = 1 if previous_loan == "Yes" else 0
 
