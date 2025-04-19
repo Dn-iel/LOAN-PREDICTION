@@ -23,7 +23,7 @@ def main():
 
     st.subheader("Masukkan informasi peminjam:")
 
-    person_age = st.number_input("Usia", min_value=20, max_value=100, value=30)
+    person_age = st.number_input("Usia", min_value=20, max_value=90, value=30)
     person_gender = st.selectbox("Jenis Kelamin", ["male", "female"])
     person_education = st.selectbox("Pendidikan", ["Associate", "Bachelor", "Doctorate", "High School", "Master"])
     person_income = st.number_input("Pendapatan", min_value=0.0, value=5000.0)
