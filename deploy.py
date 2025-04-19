@@ -5,36 +5,33 @@ import streamlit as st
 
 warnings.filterwarnings('ignore')
 
-# Function untuk load model
 def load_joblib(filename):
     return joblib.load(filename)
 
-# Fungsi prediksi
 def predict_with_model(model, user_input):
     prediction = model.predict(user_input)
     return prediction[0]
 
-# Streamlit UI
 def main():
     st.title("Loan Prediction App")
 
     # Load model dan encoder
-    model_filename = 'xgb_model.pkl' 
-    encoder_filename = 'onehot_encoder.pkl'
+    model_filename = 'xgboost_best_model.pkl' 
+    encoder_filename = 'one_hot_encoder.pkl'
 
     model = load_joblib(model_filename)
     encoder = load_joblib(encoder_filename)
 
     st.subheader("Masukkan informasi peminjam:")
 
-    person_age = st.number_input("Usia", min_value=18, max_value=100, value=30)
+    person_age = st.number_input("Usia", min_value=20, max_value=100, value=30)
     person_gender = st.selectbox("Jenis Kelamin", ["male", "female"])
-    person_education = st.selectbox("Pendidikan", ["Bachelor", "Associate", "High School", "Master", "Doctorate"])
+    person_education = st.selectbox("Pendidikan", ["Associate", "Bachelor", "Doctorate", "High School", "Master"])
     person_income = st.number_input("Pendapatan", min_value=0.0, value=5000.0)
     person_emp_exp = st.number_input("Pengalaman Kerja (tahun)", min_value=0, value=3)
-    person_home_ownership = st.selectbox("Status Kepemilikan Rumah", ["RENT", "OWN", "MORTGAGE", "OTHER"])
+    person_home_ownership = st.selectbox("Status Kepemilikan Rumah", ["MORTGAGE", "OWN", "RENT", "OTHER"])
     loan_amnt = st.number_input("Jumlah Pinjaman", min_value=1000.0, value=10000.0)
-    loan_intent = st.selectbox("Tujuan Pinjaman", ["EDUCATION", "MEDICAL", "VENTURE", "PERSONAL", "HOMEIMPROVEMENT", "DEBTCONSOLIDATION"])
+    loan_intent = st.selectbox("Tujuan Pinjaman", ["DEBTCONSOLIDATION", "EDUCATION", "HOMEIMPROVEMENT", "MEDICAL", "PERSONAL", "VENTURE" ])
     loan_int_rate = st.number_input("Bunga Pinjaman (%)", min_value=0.0, value=10.0)
     loan_percent_income = st.number_input("Persentase Pinjaman dari Pendapatan", min_value=0.0, value=0.25)
     cb_hist_len = st.number_input("Lama Riwayat Kredit", min_value=0, value=2)
