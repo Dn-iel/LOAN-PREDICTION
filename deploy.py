@@ -15,7 +15,6 @@ def predict_with_model(model, user_input):
 def main():
     st.title("Loan Prediction App")
 
-    # Load model dan encoder
     model_filename = 'xgboost_best_model.pkl' 
     encoder_filename = 'one_hot_encoder.pkl'
 
