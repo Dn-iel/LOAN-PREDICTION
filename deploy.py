@@ -2,7 +2,6 @@ import joblib
 import warnings
 import pandas as pd
 import streamlit as st
-
 warnings.filterwarnings('ignore')
 
 def load_joblib(filename):
