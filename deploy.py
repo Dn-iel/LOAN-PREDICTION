@@ -31,7 +31,10 @@ def main():
     loan_amnt = st.number_input("Loan Amount", min_value=1000.0, value=10000.0)
     loan_intent = st.selectbox("Loan Intent", ["DEBTCONSOLIDATION", "EDUCATION", "HOMEIMPROVEMENT", "MEDICAL", "PERSONAL", "VENTURE" ])
     loan_int_rate = st.number_input("Loan Interest (%)", min_value=0.0, value=10.0)
-    loan_percent_income = st.number_input("Loan to Income Ratio", min_value=0.0, value=0.25)
+    
+    loan_percent_income = loan_amnt / person_income
+    st.write(f"Loan to Income Ratio : {loan_percent_income:.2f}")
+    
     cb_hist_len = st.number_input("Length of Credit History", min_value=0, value=2)
     credit_score = st.number_input("Credit Score", min_value=0, value=600)
     previous_loan = st.selectbox("Previous Loan", ["Yes", "No"])
