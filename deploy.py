@@ -67,7 +67,7 @@ def main():
 
         prediction = predict_with_model(model, df_encoded)
 
-        st.success(f"Prediction Result: {'Congratulations, you're QUALIFY for a loan' if prediction == 1 else 'Too bad, you DIDN'T QUALIFY for the loan'}")
+        st.success(f"Prediction Result: {'Congratulations, you are QUALIFY for a loan' if prediction == 1 else 'Too bad, you DID NOT QUALIFY for the loan'}")
 
 if __name__ == '__main__':
     main()
